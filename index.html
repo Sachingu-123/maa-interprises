@@ -69,6 +69,7 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
         }
         
         .product-card:hover {
@@ -166,6 +167,91 @@
             text-decoration: underline;
         }
         
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+            animation: fadeIn 0.3s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 900px;
+            max-height: 80vh;
+            overflow-y: auto;
+            animation: slideIn 0.3s;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: #667eea;
+        }
+        
+        .modal-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .modal-header h2 {
+            color: #667eea;
+            font-size: 2rem;
+        }
+        
+        .samples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .sample-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .sample-item h4 {
+            color: #764ba2;
+            margin-bottom: 0.5rem;
+        }
+        
+        .sample-item p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2rem;
@@ -176,6 +262,16 @@
             }
             
             .products {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+                padding: 1.5rem;
+            }
+            
+            .samples-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -194,28 +290,32 @@
         </div>
         
         <section class="products">
-            <div class="product-card">
+            <div class="product-card" onclick="openModal('caps')">
                 <div class="icon">🧢</div>
                 <h3>Caps</h3>
                 <p>Wide variety of caps for all occasions - sports, casual, and formal wear</p>
+                <p style="color: #667eea; font-size: 0.9rem; margin-top: 1rem;">Click to view samples →</p>
             </div>
             
-            <div class="product-card">
+            <div class="product-card" onclick="openModal('shocks')">
                 <div class="icon">⚙️</div>
                 <h3>Shocks</h3>
                 <p>High-quality shock absorbers and automotive accessories</p>
+                <p style="color: #667eea; font-size: 0.9rem; margin-top: 1rem;">Click to view samples →</p>
             </div>
             
-            <div class="product-card">
+            <div class="product-card" onclick="openModal('belts')">
                 <div class="icon">👔</div>
                 <h3>Belts</h3>
                 <p>Premium belts in leather and synthetic materials for men and women</p>
+                <p style="color: #667eea; font-size: 0.9rem; margin-top: 1rem;">Click to view samples →</p>
             </div>
             
-            <div class="product-card">
+            <div class="product-card" onclick="openModal('saree')">
                 <div class="icon">👗</div>
                 <h3>Saree Accessories</h3>
                 <p>Complete range of saree-related items including falls, petticoats, and more</p>
+                <p style="color: #667eea; font-size: 0.9rem; margin-top: 1rem;">Click to view samples →</p>
             </div>
         </section>
         
@@ -250,9 +350,185 @@
         </div>
     </div>
     
+    <!-- Modals -->
+    <div id="capsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('caps')">&times;</span>
+            <div class="modal-header">
+                <h2>🧢 Caps Collection</h2>
+                <p>Explore our wide range of caps</p>
+            </div>
+            <div class="samples-grid">
+                <div class="sample-item">
+                    <h4>Sports Caps</h4>
+                    <p>Baseball caps, cricket caps, running caps with moisture-wicking fabric</p>
+                </div>
+                <div class="sample-item">
+                    <h4>Casual Caps</h4>
+                    <p>Snapback, trucker caps, dad hats in various colors and designs</p>
+                </div>
+                <div class="sample-item">
+                    <h4>Formal Caps</h4>
+                    <p>Flat caps, newsboy caps, ivy caps for sophisticated look</p>
+                </div>
+                <div class="sample-item">
+                    <h4>Kids Caps</h4>
+                    <p>Colorful cartoon character caps, adjustable sizes for children</p>
+                </div>
+                <div class="sample-item">
+                    <h4>Branded Caps</h4>
+                    <p>Premium branded caps from top manufacturers</p>
+                </div>
+                <div class="sample-item">
+                    <h4>Custom Caps</h4>
+                    <p>Customizable caps with logo printing available for bulk orders</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="shocksModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('shocks')">&times;</span>
+            <div class="modal-header">
+                <h2>⚙️ Shocks & Automotive Parts</h2>
+                <p>Quality automotive accessories</p>
+            </div>
+            <div class="samples-grid">
+                <div class="sample-item">
+                    <h4>Front Shocks</h4>
+                    <p>Heavy-duty front shock absorbers for cars and bikes</p>
+                </div>
+                <div class="sample-item">
+                    <h4>Rear Shocks</h4>
+                    <p>Durable rear suspension shocks for smooth rides</p>
+                </div>
+                <div class="sample-item">
+                    <h4>Bike Shocks</h4>
+                    <p>Motorcycle shock absorbers - all brands available</p>
+                </div>
+                <div class="sample-item">
+                    <h4>Car Shocks</h4>
+                    <p>Premium car shock absorbers for various models</p>
+                </div>
+                <div class="sample-item">
+                    <h4>Suspension Parts</h4>
+                    <p>Complete suspension system components and accessories</p>
+                </div>
+                <div class="sample-item">
+                    <h4>OEM & Aftermarket</h4>
+                    <p>Both original and aftermarket parts available</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="beltsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('belts')">&times;</span>
+            <div class="modal-header">
+                <h2>👔 Belts Collection</h2>
+                <p>Premium quality belts for every occasion</p>
+            </div>
+            <div class="samples-grid">
+                <div class="sample-item">
+                    <h4>Leather Belts</h4>
+                    <p>Genuine leather belts in black, brown, and tan colors</p>
+                </div>
+                <div class="sample-item">
+                    <h4>Formal Belts</h4>
+                    <p>Elegant formal belts for office and business wear</p>
+                </div>
+                <div class="sample-item">
+                    <h4>Casual Belts</h4>
+                    <p>Stylish casual belts for everyday wear</p>
+                </div>
+                <div class="sample-item">
+                    <h4>Ladies Belts</h4>
+                    <p>Fashion belts for women in various styles and colors</p>
+                </div>
+                <div class="sample-item">
+                    <h4>Canvas Belts</h4>
+                    <p>Durable canvas and fabric belts with metal buckles</p>
+                </div>
+                <div class="sample-item">
+                    <h4>Designer Belts</h4>
+                    <p>Premium designer belts with branded buckles</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="sareeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('saree')">&times;</span>
+            <div class="modal-header">
+                <h2>👗 Saree Accessories</h2>
+                <p>Complete range of saree essentials</p>
+            </div>
+            <div class="samples-grid">
+                <div class="sample-item">
+                    <h4>Saree Falls</h4>
+                    <p>Cotton and polyester falls in all colors</p>
+                </div>
+                <div class="sample-item">
+                    <h4>Petticoats</h4>
+                    <p>Cotton and satin petticoats in various sizes</p>
+                </div>
+                <div class="sample-item">
+                    <h4>Blouse Pieces</h4>
+                    <p>Matching and contrast blouse fabrics</p>
+                </div>
+                <div class="sample-item">
+                    <h4>Saree Pins</h4>
+                    <p>Decorative and safety pins for saree draping</p>
+                </div>
+                <div class="sample-item">
+                    <h4>Borders & Laces</h4>
+                    <p>Decorative borders, laces, and trims for sarees</p>
+                </div>
+                <div class="sample-item">
+                    <h4>Saree Covers</h4>
+                    <p>Protective covers and storage bags for sarees</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <footer>
         <p>&copy; 2025 Maa Interprises. All rights reserved.</p>
         <p>Quality Products | Trusted Service | Customer Satisfaction</p>
     </footer>
+    
+    <script>
+        function openModal(type) {
+            document.getElementById(type + 'Modal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal(type) {
+            document.getElementById(type + 'Modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+        
+        // Close modal on ESC key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modals = document.getElementsByClassName('modal');
+                for (let modal of modals) {
+                    modal.style.display = 'none';
+                }
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
 </body>
 </html>
