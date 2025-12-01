@@ -192,7 +192,7 @@
             padding: 2rem;
             border-radius: 15px;
             width: 90%;
-            max-width: 900px;
+            max-width: 1000px;
             max-height: 80vh;
             overflow-y: auto;
             animation: slideIn 0.3s;
@@ -229,27 +229,51 @@
         
         .samples-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1.5rem;
             margin-top: 2rem;
         }
         
         .sample-item {
             background: #f8f9fa;
-            padding: 1.5rem;
+            padding: 1rem;
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .sample-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .sample-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
         
         .sample-item h4 {
             color: #764ba2;
             margin-bottom: 0.5rem;
+            font-size: 1.1rem;
         }
         
         .sample-item p {
             color: #666;
             font-size: 0.9rem;
+        }
+        
+        .placeholder-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
         }
         
         @media (max-width: 768px) {
@@ -360,26 +384,44 @@
             </div>
             <div class="samples-grid">
                 <div class="sample-item">
+                    <div class="placeholder-img" style="width: 100%; height: 180px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <span style="font-size: 4rem;">⚾</span>
+                    </div>
                     <h4>Sports Caps</h4>
                     <p>Baseball caps, cricket caps, running caps with moisture-wicking fabric</p>
                 </div>
                 <div class="sample-item">
+                    <div class="placeholder-img" style="width: 100%; height: 180px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <span style="font-size: 4rem;">🧢</span>
+                    </div>
                     <h4>Casual Caps</h4>
                     <p>Snapback, trucker caps, dad hats in various colors and designs</p>
                 </div>
                 <div class="sample-item">
+                    <div class="placeholder-img" style="width: 100%; height: 180px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <span style="font-size: 4rem;">🎩</span>
+                    </div>
                     <h4>Formal Caps</h4>
                     <p>Flat caps, newsboy caps, ivy caps for sophisticated look</p>
                 </div>
                 <div class="sample-item">
+                    <div class="placeholder-img" style="width: 100%; height: 180px; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <span style="font-size: 4rem;">👶</span>
+                    </div>
                     <h4>Kids Caps</h4>
                     <p>Colorful cartoon character caps, adjustable sizes for children</p>
                 </div>
                 <div class="sample-item">
+                    <div class="placeholder-img" style="width: 100%; height: 180px; background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <span style="font-size: 4rem;">⭐</span>
+                    </div>
                     <h4>Branded Caps</h4>
                     <p>Premium branded caps from top manufacturers</p>
                 </div>
                 <div class="sample-item">
+                    <div class="placeholder-img" style="width: 100%; height: 180px; background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <span style="font-size: 4rem;">✨</span>
+                    </div>
                     <h4>Custom Caps</h4>
                     <p>Customizable caps with logo printing available for bulk orders</p>
                 </div>
@@ -396,26 +438,44 @@
             </div>
             <div class="samples-grid">
                 <div class="sample-item">
+                    <div class="placeholder-img" style="width: 100%; height: 180px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <span style="font-size: 4rem;">🔧</span>
+                    </div>
                     <h4>Front Shocks</h4>
                     <p>Heavy-duty front shock absorbers for cars and bikes</p>
                 </div>
                 <div class="sample-item">
+                    <div class="placeholder-img" style="width: 100%; height: 180px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <span style="font-size: 4rem;">⚙️</span>
+                    </div>
                     <h4>Rear Shocks</h4>
                     <p>Durable rear suspension shocks for smooth rides</p>
                 </div>
                 <div class="sample-item">
+                    <div class="placeholder-img" style="width: 100%; height: 180px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <span style="font-size: 4rem;">🏍️</span>
+                    </div>
                     <h4>Bike Shocks</h4>
                     <p>Motorcycle shock absorbers - all brands available</p>
                 </div>
                 <div class="sample-item">
+                    <div class="placeholder-img" style="width: 100%; height: 180px; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <span style="font-size: 4rem;">🚗</span>
+                    </div>
                     <h4>Car Shocks</h4>
                     <p>Premium car shock absorbers for various models</p>
                 </div>
                 <div class="sample-item">
+                    <div class="placeholder-img" style="width: 100%; height: 180px; background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <span style="font-size: 4rem;">🔩</span>
+                    </div>
                     <h4>Suspension Parts</h4>
                     <p>Complete suspension system components and accessories</p>
                 </div>
                 <div class="sample-item">
+                    <div class="placeholder-img" style="width: 100%; height: 180px; background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <span style="font-size: 4rem;">✅</span>
+                    </div>
                     <h4>OEM & Aftermarket</h4>
                     <p>Both original and aftermarket parts available</p>
                 </div>
@@ -432,26 +492,44 @@
             </div>
             <div class="samples-grid">
                 <div class="sample-item">
+                    <div class="placeholder-img" style="width: 100%; height: 180px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <span style="font-size: 4rem;">🎀</span>
+                    </div>
                     <h4>Leather Belts</h4>
                     <p>Genuine leather belts in black, brown, and tan colors</p>
                 </div>
                 <div class="sample-item">
+                    <div class="placeholder-img" style="width: 100%; height: 180px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <span style="font-size: 4rem;">👔</span>
+                    </div>
                     <h4>Formal Belts</h4>
                     <p>Elegant formal belts for office and business wear</p>
                 </div>
                 <div class="sample-item">
+                    <div class="placeholder-img" style="width: 100%; height: 180px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <span style="font-size: 4rem;">👖</span>
+                    </div>
                     <h4>Casual Belts</h4>
                     <p>Stylish casual belts for everyday wear</p>
                 </div>
                 <div class="sample-item">
+                    <div class="placeholder-img" style="width: 100%; height: 180px; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <span style="font-size: 4rem;">👗</span>
+                    </div>
                     <h4>Ladies Belts</h4>
                     <p>Fashion belts for women in various styles and colors</p>
                 </div>
                 <div class="sample-item">
+                    <div class="placeholder-img" style="width: 100%; height: 180px; background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <span style="font-size: 4rem;">🎨</span>
+                    </div>
                     <h4>Canvas Belts</h4>
                     <p>Durable canvas and fabric belts with metal buckles</p>
                 </div>
                 <div class="sample-item">
+                    <div class="placeholder-img" style="width: 100%; height: 180px; background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <span style="font-size: 4rem;">💎</span>
+                    </div>
                     <h4>Designer Belts</h4>
                     <p>Premium designer belts with branded buckles</p>
                 </div>
@@ -468,26 +546,45 @@
             </div>
             <div class="samples-grid">
                 <div class="sample-item">
+                    <div class="placeholder-img" style="width: 100%; height: 180px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <span style="font-size: 4rem;">🧵</span>
+                    </div>
                     <h4>Saree Falls</h4>
                     <p>Cotton and polyester falls in all colors</p>
                 </div>
                 <div class="sample-item">
+                    <div class="placeholder-img" style="width: 100%; height: 180px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <span style="font-size: 4rem;">👗</span>
+                    </div>
                     <h4>Petticoats</h4>
                     <p>Cotton and satin petticoats in various sizes</p>
                 </div>
                 <div class="sample-item">
+                    <div class="placeholder-img" style="width: 100%; height: 180px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <span style="font-size: 4rem;">👚</span>
+                    </div>
                     <h4>Blouse Pieces</h4>
                     <p>Matching and contrast blouse fabrics</p>
                 </div>
                 <div class="sample-item">
+                    <div class="placeholder-img" style="width: 100%; height: 180px; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <span style="font-size: 4rem;">📌</span>
+                    </div>
                     <h4>Saree Pins</h4>
                     <p>Decorative and safety pins for saree draping</p>
                 </div>
                 <div class="sample-item">
+                    <div class="placeholder-img" style="width: 100%; height: 180px; background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <span style="font-size: 4rem;">✨</span>
+                    </div>
                     <h4>Borders & Laces</h4>
                     <p>Decorative borders, laces, and trims for sarees</p>
                 </div>
                 <div class="sample-item">
+                    <div class="placeholder-img" style="width: 100%; height: 180px; background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <span style="font-size: 4rem;">👜</span>
+                    </div>
+                    <h4>Saree Covers</h4>
                     <h4>Saree Covers</h4>
                     <p>Protective covers and storage bags for sarees</p>
                 </div>
